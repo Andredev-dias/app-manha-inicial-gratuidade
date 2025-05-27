@@ -62,7 +62,11 @@ export default function Cards(){
     return(
         <>
         <Header image={require('@/assets/images/landscape2.webp')}/>
-        <View style={styles.container}>
+            {loading 
+            ? 
+           <Text style={styles.loadingText}>CAREEGANDO...</Text>
+            :   
+            <View style={styles.container}>
             <TouchableOpacity onPress={voltar}>
                 <Text style={styles.backBtn}>🔙</Text>
             </TouchableOpacity>
@@ -71,7 +75,7 @@ export default function Cards(){
             <Text style={styles.subtitle2}>Insira uma página - atual: {page}</Text>
             <TextInput style={styles.input} keyboardType="numeric" placeholder="1/42" value={page} onChangeText={(value) => setPage(value)}/>
             <FlatList data={characters} renderItem={renderItem} keyExtractor={(item: any) => item.id.toString()}/>
-        </View>
+        </View>}
         </>
     )
 }
@@ -162,5 +166,9 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 16,
         color: '#555'
+    },
+    loadingText:{
+        textAlign: 'center',
+        fontSize: 30
     }
 })
