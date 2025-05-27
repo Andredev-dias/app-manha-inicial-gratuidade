@@ -2,6 +2,7 @@ import { Text, View, StyleSheet, SafeAreaView, FlatList, TouchableOpacity } from
 import data from '@/constants/mock'
 import { Item } from '@/components/item'
 import { router } from 'expo-router'
+import { Header } from '@/components/header'
 
 export default function List() {
 
@@ -11,6 +12,7 @@ export default function List() {
 
     return (
         <>
+            <Header image={require('@/assets/images/landscape.jpg')}/>
             <View style={styles.center}>
                 <TouchableOpacity onPress={voltar}>
                     <Text style={styles.backBtn}>🔙</Text>

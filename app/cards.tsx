@@ -1,3 +1,4 @@
+import { Header } from "@/components/header";
 import { router } from "expo-router";
 import React, { useEffect, useState } from "react";
 import { FlatList, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
@@ -59,6 +60,8 @@ export default function Cards(){
     )
     
     return(
+        <>
+        <Header image={require('@/assets/images/landscape2.webp')}/>
         <View style={styles.container}>
             <TouchableOpacity onPress={voltar}>
                 <Text style={styles.backBtn}>🔙</Text>
@@ -69,6 +72,7 @@ export default function Cards(){
             <TextInput style={styles.input} keyboardType="numeric" placeholder="1/42" value={page} onChangeText={(value) => setPage(value)}/>
             <FlatList data={characters} renderItem={renderItem} keyExtractor={(item: any) => item.id.toString()}/>
         </View>
+        </>
     )
 }
 

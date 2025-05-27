@@ -1,3 +1,4 @@
+import { Header } from '@/components/header'
 import { Link, router } from 'expo-router'
 import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
@@ -9,6 +10,7 @@ export default function HomePage() {
 
     return (
         <SafeAreaView style={styles.wrap}>
+            <Header image={require('@/assets/images/ld.jpg')} />
             <ScrollView contentContainerStyle={{ flexGrow: 1 }} style={styles.wrap}>
                 <View style={styles.body}>
                     <Text style={styles.title}>Tela Inicial</Text>
