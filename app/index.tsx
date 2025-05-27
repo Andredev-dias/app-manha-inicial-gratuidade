@@ -3,9 +3,9 @@ import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, Vi
 
 export default function HomePage() {
 
-    const onPress = () => {
-        router.push('/cards')
-    }
+    // const onPress = () => {
+    //     router.push('/cards')
+    // }
 
     return (
         <SafeAreaView style={styles.wrap}>
@@ -19,13 +19,16 @@ export default function HomePage() {
                 </View>
                 <Text style={styles.center}>CLIQUE NOS BOTOES ABAIXO PARA IR PARA PAGINA DE CARDS</Text>
                 <View>
-                    <Link style={styles.button} href={'/cards'}>
+                    {/* <Link style={styles.button} href={'/cards'}>
                         <Text style={styles.btnText}>CARDS</Text>
-                    </Link>
+                    </Link> */}
+                     <TouchableOpacity style={styles.button} onPress={() => router.push('/list')} >
+                        <Text style={styles.btnText}>LIST - MOCK</Text>
+                    </TouchableOpacity>
                 </View>
                 <View>
-                    <TouchableOpacity style={styles.button} onPress={onPress} >
-                        <Text style={styles.btnText}>CARDS</Text>
+                    <TouchableOpacity style={styles.button} onPress={() => router.push('/cards')} >
+                        <Text style={styles.btnText}>CARDS - API</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>
